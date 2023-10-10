@@ -1,0 +1,6 @@
+.sidebar-container {
+  width: 200px;
+  height: calc(100vh - 60px);
+  background-color: navy;
+  color: white;
+}
