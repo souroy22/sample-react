@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import RouterComponent from "./router";
 import { useEffect } from "react";
 import { loadUser } from "./redux/reducers/user";
+import { Box } from "@mui/material";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,13 @@ const App = () => {
     <div className="App">
       <Navbar />
       <div className="main-container">
-        <Sidebar />
-        <div className="pages-container">
+        {user !== null && <Sidebar />}
+        <Box
+          className="pages-container"
+          sx={{ width: user !== null ? "calc(100vw - 200px)" : "100vw" }}
+        >
           <RouterComponent />
-        </div>
+        </Box>
       </div>
     </div>
   );
